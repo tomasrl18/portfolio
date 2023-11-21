@@ -1,11 +1,6 @@
-.text-hidden {
+.skills-list,
+.arcs-list,
+.soft-skills-list {
   display: none;
-}
-
-.link-deployment {
-  cursor: pointer;
-}
-
-.skills-list {
-  display: none;
+  list-style: none;
 }
