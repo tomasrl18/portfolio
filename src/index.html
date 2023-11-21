@@ -14,6 +14,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
   <link rel="stylesheet" href="styles.scss" />
   <script defer src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
+  <script defer src="./data/displayText.js"></script>
 
   <!-- Todo: remove the below script once you finish your portfolio -->
   <script async defer src="https://buttons.github.io/buttons.js"></script>
@@ -41,18 +42,67 @@
       <div class="row about-wrapper">
         <div class="col-md-6 col-sm-12">
           <div class="about-wrapper__image load-hidden">
-            <img alt="Profile Image" class="img-fluid rounded shadow-lg" height="auto" width="300px"
-              src="assets/WhatsApp Image 2023-11-20 at 18.37.43.jpeg" alt="Profile Image" />
+            <img alt="Profile Image" class="img-fluid rounded shadow-lg" height="auto" width="300px" src="assets/ai.jpg"
+              alt="Profile Image" />
           </div>
         </div>
         <div class="col-md-6 col-sm-12">
           <div class="about-wrapper__info load-hidden">
             <p class="about-wrapper__info-text">
-              Hi! I'm Tomás Raigal López, a technology enthusiast who started his journey in the world of programming at the age of 17. Currently, I am working as a web developer. 💻✨
+              Hi! I'm Tomás Raigal López, a technology enthusiast who started
+              his journey in the world of programming at the age of 17.
+              Currently, I am working as a web developer. 💻✨
             </p>
             <p class="about-wrapper__info-text">
-              I am always willing to learn. Right now I'm really into the world of best practices, clean code and communities.
+              I am always willing to learn. Right now I'm really into the
+              world of best practices, clean code and communities.
             </p>
+
+            <button onclick="toggleSkills()" class="cta-btn cta-btn--hero">Ver Habilidades</button>
+
+            <div class="skills-list">
+                <ul>
+                    <li>HTML</li>
+                    <li>CSS</li>
+                    <li>JavaScript</li>
+                    <li>Python</li>
+                    <li>React</li>
+                </ul>
+            </div>
+
+            <!-- <div class="list-container">
+                <p class="about-wrapper__info-text">Skills:</p>
+                <ul class="skills-list">
+                  <li>
+                    <p class="about-wrapper__info-text">PHP</p>
+                  </li>
+                  <li>
+                    <p class="about-wrapper__info-text">JavaScript</p>
+                  </li>
+                  <li>
+                    <p class="about-wrapper__info-text">HTML</p>
+                  </li>
+                  <li>
+                    <p class="about-wrapper__info-text">CSS</p>
+                  </li>
+                </ul>
+                <ul class="arc-list">
+                  <li>
+                    <p class="about-wrapper__info-text">Laravel</p>
+                  </li>
+                  <li>
+                    <p class="about-wrapper__info-text">Vue.js</p>
+                  </li>
+                </ul>
+              </div>
+              <div class="list-container">
+                <p class="about-wrapper__info-text">Soft Skills:</p>
+                <ul class="soft-skills-list">
+                  <li>
+                    <p class="about-wrapper__info-text">a</p>
+                  </li>
+                </ul>
+              </div> -->
             <!-- <span class="d-flex mt-3">
               <a rel="noreferrer" target="_blank" class="cta-btn cta-btn--resume" href="assets/resume.pdf">
                 View Resume
@@ -69,13 +119,14 @@
       <div class="project-wrapper">
         <h2 class="section-title dark-blue-text">Katas</h2>
 
-        <hr>
+        <hr />
 
         <p>
-          In the context of programming, a "kata" refers to a programming exercise designed to improve a developer's skills and practices.
+          In the context of programming, a "kata" refers to a programming
+          exercise designed to improve a developer's skills and practices.
         </p>
 
-        <hr>
+        <hr />
 
         <div class="row">
           <div class="col-lg-4 col-sm-12">
@@ -83,25 +134,30 @@
               <h3 class="project-wrapper__text-title">FizzBuzz</h3>
               <div>
                 <p class="mb-4">
-                  This kata consists of, through TDD, recreating a children's game.
-                  
-                  <br/>
-                  
-                  Write a function that takes positive integers and outputs their string representation.
-                  Your function should comply with the following additional rules:
-                  <br/>- If the number is a multiple of three, return the string "Fizz".
-                  <br/>- If the number is a multiple of five, return the string "Buzz".
-                  <br/>- If the number is a multiple of both three and five, return the string "FizzBuzz".
+                  This kata consists of, through TDD, recreating a children's
+                  game.
+
+                  <br />
+
+                  Write a function that takes positive integers and outputs
+                  their string representation. Your function should comply
+                  with the following additional rules:
+                  <br />- If the number is a multiple of three, return the
+                  string "Fizz". <br />- If the number is a multiple of five,
+                  return the string "Buzz". <br />- If the number is a
+                  multiple of both three and five, return the string
+                  "FizzBuzz".
                 </p>
               </div>
-              <a rel="noreferrer" target="_blank" class="cta-btn cta-btn--hero" href="https://github.com/tomasrl18/FizzBuzzKata">
+              <a rel="noreferrer" target="_blank" class="cta-btn cta-btn--hero"
+                href="https://github.com/tomasrl18/FizzBuzzKata">
                 See Live
               </a>
             </div>
           </div>
           <div class="col-lg-8 col-sm-12">
             <div class="project-wrapper__image load-hidden">
-              <a rel="noreferrer" href="#!" target="_blank">
+              <a rel="noreferrer" href="https://github.com/tomasrl18/FizzBuzzKata" target="_blank">
                 <div data-tilt data-tilt-max="4" data-tilt-glare="true" data-tilt-max-glare="0.5"
                   class="thumbnail rounded js-tilt">
                   <img alt="Project Image" class="img-fluid" src="assets/FizzBuzz.png" />
@@ -114,20 +170,17 @@
         <div class="row">
           <div class="col-lg-4 col-sm-12">
             <div class="project-wrapper__text load-hidden">
-              <h3 class="project-wrapper__text-title">Project Title 1</h3>
+              <h3 class="project-wrapper__text-title">Rock Paper Scissors</h3>
               <div>
                 <p class="mb-4">
-                  Demonstrate in this description the skills of a programmer: such as having commitment,
-                  having perseverance and accepting alternative solutions. Remember that being a portfolio you are not
-                  selling the project,
-                  you are selling yourself, it reflects the resources used: Frameworks, libraries, platforms, etc.
+                  This kata replicates the rock paper scissors game in order
+                  to practice skills such as TDD, pair programming or mob
+                  programming.
                 </p>
               </div>
-              <a rel="noreferrer" target="_blank" class="cta-btn cta-btn--hero" href="#!">
+              <a rel="noreferrer" target="_blank" class="cta-btn cta-btn--hero"
+                href="https://github.com/tomasrl18/Kata-Rock-Paper-Scissors">
                 See Live
-              </a>
-              <a rel="noreferrer" target="_blank" class="cta-btn text-color-main" href="#!">
-                Source Code
               </a>
             </div>
           </div>
@@ -136,62 +189,27 @@
               <a rel="noreferrer" href="#!" target="_blank">
                 <div data-tilt data-tilt-max="4" data-tilt-glare="true" data-tilt-max-glare="0.5"
                   class="thumbnail rounded js-tilt">
-                  <img alt="Project Image" class="img-fluid" src="assets/project.jpg" />
+                  <img alt="Project Image" class="img-fluid" src="assets/vg6mmkv6hipscpi7pl0h.webp" />
                 </div>
               </a>
             </div>
           </div>
         </div>
-
-        <div class="row">
-          <div class="col-lg-4 col-sm-12">
-            <div class="project-wrapper__text load-hidden">
-              <h3 class="project-wrapper__text-title">Project Title 2</h3>
-              <div>
-                <p class="mb-4">
-                  If the project was collaborative, reflect it in this description, that will demonstrate communication
-                  and/or leadership skills.
-                  Additionally, if you made use of the mastery of a second language, it will reflect on you
-                  professionalism.
-                </p>
-              </div>
-              <a rel="noreferrer" target="_blank" class="cta-btn cta-btn--hero" href="#!">
-                See Live
-              </a>
-              <a rel="noreferrer" target="_blank" class="cta-btn text-color-main" href="#!">
-                Source Code
-              </a>
-            </div>
-          </div>
-          <div class="col-lg-8 col-sm-12">
-            <div class="project-wrapper__image load-hidden">
-              <a rel="noreferrer" href="#!" target="_blank">
-                <div data-tilt data-tilt-max="4" data-tilt-glare="true" data-tilt-max-glare="0.5"
-                  class="thumbnail rounded js-tilt">
-                  <img alt="Project Image" class="img-fluid" src="assets/project.jpg" />
-                </div>
-              </a>
-            </div>
-          </div>
-        </div>
-        <!-- /END Project -->
       </div>
     </div>
   </section>
-  <!-- /END Projects Section -->
 
-  <!-- **** Contact Section **** -->
   <section id="contact">
     <div class="container">
       <h2 class="section-title">Contact</h2>
       <div class="contact-wrapper load-hidden">
-        <p class="contact-wrapper__text">[Put your call to action here]</p>
-        <a rel="noreferrer" target="_blank" class="cta-btn cta-btn--resume" href="mailto:example@email.com">Call to
-          Action</a>
+        <p class="contact-wrapper__text">tomaslopezraigal@gmail.com</p>
+        <a rel="noreferrer" target="_blank" class="cta-btn cta-btn--resume"
+          href="mailto:tomaslopezraigal@gmail.com">Mail me
+        </a>
       </div>
     </div>
   </section>
-  <!-- /END Contact Section -->
 
   <!-- **** Footer Section **** -->
   <footer class="footer navbar-static-bottom">
@@ -200,13 +218,13 @@
         <i class="fa fa-angle-up fa-2x" aria-hidden="true"></i>
       </a>
       <div class="social-links">
-        <a rel="noreferrer" href="#!" target="_blank">
+        <a rel="noreferrer" href="https://twitter.com/raigal_tomas" target="_blank">
           <i class="fa fa-twitter fa-inverse"></i>
         </a>
-        <a rel="noreferrer" href="#!" target="_blank">
+        <a rel="noreferrer" href="https://www.linkedin.com/in/tom%C3%A1s-raigal-l%C3%B3pez-0a67a2273/" target="_blank">
           <i class="fa fa-linkedin fa-inverse"></i>
         </a>
-        <a rel="noreferrer" href="#!" target="_blank">
+        <a rel="noreferrer" href="https://github.com/tomasrl18" target="_blank">
           <i class="fa fa-github fa-inverse"></i>
         </a>
       </div>
