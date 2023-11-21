@@ -15,9 +15,6 @@
   <link rel="stylesheet" href="styles.scss" />
   <script defer src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
   <script defer src="./data/displayText.js"></script>
-
-  <!-- Todo: remove the below script once you finish your portfolio -->
-  <script async defer src="https://buttons.github.io/buttons.js"></script>
 </head>
 
 <body>
@@ -58,56 +55,39 @@
               world of best practices, clean code and communities.
             </p>
 
-            <button onclick="toggleSkills()" class="cta-btn cta-btn--hero">Ver Habilidades</button>
+            <button onclick="toggleSkills()" class="cta-btn cta-btn--hab">
+              Skills
+            </button>
 
-            <div class="skills-list">
-                <ul>
-                    <li>HTML</li>
-                    <li>CSS</li>
-                    <li>JavaScript</li>
-                    <li>Python</li>
-                    <li>React</li>
-                </ul>
-            </div>
+            <ul class="skills-list">
+              <li>PHP</li>
+              <li>JavaScript</li>
+              <li>HTML</li>
+              <li>CSS</li>
+              <li>Git</li>
+              <li>TDD</li>
+              <li>Testing</li>
+            </ul>
 
-            <!-- <div class="list-container">
-                <p class="about-wrapper__info-text">Skills:</p>
-                <ul class="skills-list">
-                  <li>
-                    <p class="about-wrapper__info-text">PHP</p>
-                  </li>
-                  <li>
-                    <p class="about-wrapper__info-text">JavaScript</p>
-                  </li>
-                  <li>
-                    <p class="about-wrapper__info-text">HTML</p>
-                  </li>
-                  <li>
-                    <p class="about-wrapper__info-text">CSS</p>
-                  </li>
-                </ul>
-                <ul class="arc-list">
-                  <li>
-                    <p class="about-wrapper__info-text">Laravel</p>
-                  </li>
-                  <li>
-                    <p class="about-wrapper__info-text">Vue.js</p>
-                  </li>
-                </ul>
-              </div>
-              <div class="list-container">
-                <p class="about-wrapper__info-text">Soft Skills:</p>
-                <ul class="soft-skills-list">
-                  <li>
-                    <p class="about-wrapper__info-text">a</p>
-                  </li>
-                </ul>
-              </div> -->
-            <!-- <span class="d-flex mt-3">
-              <a rel="noreferrer" target="_blank" class="cta-btn cta-btn--resume" href="assets/resume.pdf">
-                View Resume
-              </a>
-            </span> -->
+            <button onclick="toggleArcs()" style="margin-top: 5px;" class="cta-btn cta-btn--hab">
+              Architectures
+            </button>
+
+            <ul class="arcs-list">
+              <li>Laravel</li>
+              <li>Vue.js</li>
+            </ul>
+
+            <button onclick="toggleSoftSkills()" style="margin-top: 5px;" class="cta-btn cta-btn--hab">
+              Soft Skills
+            </button>
+
+            <ul class="soft-skills-list">
+              <li>Communication</li>
+              <li>Assertiveness</li>
+              <li>Respect</li>
+              <li>Feedback</li>
+            </ul>
           </div>
         </div>
       </div>
@@ -211,7 +191,6 @@
     </div>
   </section>
 
-  <!-- **** Footer Section **** -->
   <footer class="footer navbar-static-bottom">
     <div class="container">
       <a rel="noreferrer" href="#top" class="back-to-top">
@@ -227,12 +206,14 @@
         <a rel="noreferrer" href="https://github.com/tomasrl18" target="_blank">
           <i class="fa fa-github fa-inverse"></i>
         </a>
+        <a rel="noreferrer" href="assets/CV - 2.pdf" target="_blank">
+          <i class="fa fa-book fa-inverse"></i>
+        </a>
       </div>
 
       <hr />
     </div>
   </footer>
-  <!-- /END Footer Section -->
 
   <script defer type="module" src="index.js"></script>
 </body>
