@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en" class="sr">
-
 <head>
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -16,7 +15,6 @@
   <script defer src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
   <script defer src="./data/displayText.js"></script>
 </head>
-
 <body>
   <div id="top"></div>
 
@@ -39,8 +37,11 @@
       <div class="row about-wrapper">
         <div class="col-md-6 col-sm-12">
           <div class="about-wrapper__image load-hidden">
-            <img alt="Profile Image" class="img-fluid rounded shadow-lg" height="auto" width="300px" src="assets/ai.jpg"
-              alt="Profile Image" />
+            <div data-tilt data-tilt-max="4" data-tilt-glare="true" data-tilt-max-glare="0.5"
+                  class="thumbnail rounded js-tilt">
+                  <img alt="Profile Image" class="img-fluid rounded shadow-lg" height="auto" width="300px" src="assets/ai.jpg"
+                    alt="Profile Image" />    
+            </div>
           </div>
         </div>
         <div class="col-md-6 col-sm-12">
@@ -56,7 +57,7 @@
             </p>
 
             <button onclick="toggleSkills()" class="cta-btn cta-btn--hab">
-              Skills
+              Main skills
             </button>
 
             <ul class="skills-list">
@@ -65,7 +66,6 @@
               <li>HTML</li>
               <li>CSS</li>
               <li>Git</li>
-              <li>TDD</li>
               <li>Testing</li>
             </ul>
 
@@ -88,6 +88,71 @@
               <li>Respect</li>
               <li>Feedback</li>
             </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="education" style="margin-top: 100px;">
+    <div class="container">
+      <h2 class="section-title load-hidden">My education</h2>
+      <div class="row about-wrapper">
+        <div class="col-md-6 col-sm-12">
+          <div class="about-wrapper__info load-hidden">
+            <h1 class="text-left dark-blue-text">
+              Web Application Development | <small>2021 - 2023</small>
+            </h1>
+            
+            <p class="about-wrapper__info-text">
+              <b>
+                <i class="fa fa-globe fa-inverse"></i>
+                Place:
+              </b>
+              <a href="https://www.iescierva.net/" target="_blank">I.E.S. Ingeniero de la cierva</a>
+            </p>
+
+            <p class="about-wrapper__info-text">
+              <b>
+                <i class="fa fa-graduation-cap fa-inverse"></i>
+                Average grade:
+              </b> 7.8
+            </p>
+
+            <p class="about-wrapper__info-text">
+              <b>
+                <i class="fa fa-comment-o fa-inverse"></i>
+                Description:
+              </b>
+              Develop, implement, and maintain web applications, using specific technologies,
+              guaranteeing secure access to data.
+            </p>
+
+            <p class="about-wrapper__info-text">
+              <b>
+                <i class="fa fa-code fa-inverse"></i>
+                Skills:
+              </b>
+              Java, PHP, Linux, SQL, MySQL, CSS, XML, xPath, xQuery, HTML, OOP, UML, JavaScript, English
+            </p>
+
+            <p class="about-wrapper__info-text">
+              <b>
+                <i class="fa fa-laptop fa-inverse"></i>
+                Arquitecture:
+              </b>
+              Laravel, Bootstrap
+            </p>
+
+            <hr>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-sm-12">
+          <div class="about-wrapper__image load-hidden">
+            <div data-tilt data-tilt-max="4" data-tilt-glare="true" data-tilt-max-glare="0.5" class="thumbnail rounded js-tilt">
+              <img alt="Education Image" class="img-fluid rounded shadow-lg" height="auto" width="300px" src="assets/educationAI.png"/>    
+            </div>
           </div>
         </div>
       </div>
@@ -206,7 +271,7 @@
         <a rel="noreferrer" href="https://github.com/tomasrl18" target="_blank">
           <i class="fa fa-github fa-inverse"></i>
         </a>
-        <a rel="noreferrer" href="assets/CV - 2.pdf" target="_blank">
+        <a rel="noreferrer" href="assets/CV - Tomas.pdf" target="_blank">
           <i class="fa fa-book fa-inverse"></i>
         </a>
       </div>
@@ -217,5 +282,4 @@
 
   <script defer type="module" src="index.js"></script>
 </body>
-
 </html>
