@@ -4,13 +4,17 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="icon" type="image/png" href="assets/favicon.png" />
-  <title>Tomás R. | Backend & Integrations Software Developer</title>
-  <meta name="description" content="Backend & Integrations Software Developer focused on APIs, Odoo/Laravel and automation." />
-  <meta property="og:title" content="Tomás R. | Backend & Integrations Software Developer" />
+  <title>Tomás R. | Backend & Integrations Engineer</title>
+  <meta name="description" content="Backend & Integrations Engineer focused on APIs, Odoo/Laravel, automation and performance." />
+  <meta property="og:title" content="Tomás R. | Backend & Integrations Engineer" />
   <meta property="og:description" content="APIs, Odoo/Laravel integrations, PDF reporting" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://tomasrl.es" />
+  <link rel="canonical" href="https://tomasrl.es" />
   <meta name="twitter:card" content="summary" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.scss" />
 </head>
 <body>
@@ -27,40 +31,50 @@
   </header>
   <main>
     <section id="what-i-do" class="fade-in">
-      <h2>What I do</h2>
-      <div class="cards" id="what-i-do-cards"></div>
+      <div class="container">
+        <h2 id="what-title"></h2>
+        <div class="cards" id="what-i-do-cards"></div>
+      </div>
     </section>
     <section id="stack" class="fade-in">
-      <h2>Main stack</h2>
-      <ul id="stack-list"></ul>
+      <div class="container">
+        <h2 id="stack-title"></h2>
+        <ul id="stack-list"></ul>
+      </div>
     </section>
     <section id="projects" class="fade-in">
-      <h2>Projects</h2>
-      <div id="case-studies"></div>
-      <h3>Other</h3>
-      <div id="other-projects"></div>
+      <div class="container">
+        <h2 id="projects-title"></h2>
+        <div id="case-studies"></div>
+        <h3 id="other-title"></h3>
+        <div id="other-projects"></div>
+      </div>
     </section>
     <section id="tech-matrix" class="fade-in">
-      <h2>Technology matrix</h2>
-      <table id="tech-table">
-        <thead>
-          <tr><th>Technology</th><th>Backend use</th><th>Level</th></tr>
-        </thead>
-        <tbody></tbody>
-      </table>
+      <div class="container">
+        <h2 id="tech-title"></h2>
+        <table id="tech-table">
+          <thead>
+            <tr><th id="th-tech"></th><th id="th-use"></th><th id="th-level"></th><th id="th-highlight"></th></tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
     </section>
     <section id="contact" class="fade-in">
-      <h2>Contact</h2>
-      <p id="contact-email"></p>
-      <form id="contact-form" method="post">
-        <label for="msg">Message</label>
-        <textarea id="msg" name="msg" rows="4"></textarea>
-        <button type="submit">Send</button>
-      </form>
-      <ul class="social">
-        <li><a id="github-link" target="_blank" rel="noreferrer">GitHub</a></li>
-        <li><a id="linkedin-link" target="_blank" rel="noreferrer">LinkedIn</a></li>
-      </ul>
+      <div class="container">
+        <h2 id="contact-title"></h2>
+        <p id="contact-email"></p>
+        <form id="contact-form" method="post" class="stack">
+          <label for="msg" id="contact-message-label"></label>
+          <textarea id="msg" name="msg" rows="4"></textarea>
+          <button type="submit" id="contact-send"></button>
+        </form>
+        <ul class="social cluster">
+          <li><a id="github-link" target="_blank" rel="noreferrer"></a></li>
+          <li><a id="linkedin-link" target="_blank" rel="noreferrer"></a></li>
+        </ul>
+      </div>
     </section>
   </main>
   <footer class="fade-in">
@@ -68,7 +82,7 @@
   </footer>
 
   <script src="https://cdn.weglot.com/weglot.min.js"></script>
-  <script type="application/ld+json">
+  <script type="application/ld+json" data-raw>
   {
     "@context": "https://schema.org",
     "@type": "Person",
@@ -81,12 +95,17 @@
     ]
   }
   </script>
-  <script type="application/ld+json">
+  <script type="application/ld+json" data-raw>
   {
     "@context": "https://schema.org",
     "@type": "WebSite",
     "name": "Tomás R. Portfolio",
-    "url": "https://tomasrl.es"
+    "url": "https://tomasrl.es",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://tomasrl.es/?s={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
   }
   </script>
   <script type="module" src="index.js"></script>

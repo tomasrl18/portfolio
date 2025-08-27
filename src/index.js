@@ -54,10 +54,10 @@ function buildProject(pr) {
   h3.textContent = pr.name;
   article.appendChild(h3);
   const list = document.createElement('ul');
-  const fields = ['problem', 'architecture', 'decisions', 'security', 'tests', 'results'];
+  const fields = ['problem', 'architecture', 'decisions', 'security', 'tests', 'results', 'role', 'stack'];
   fields.forEach(f => {
     const li = document.createElement('li');
-    li.textContent = `${f.charAt(0).toUpperCase() + f.slice(1)}: ${pr[f]}`;
+    li.textContent = `${content.projectFields[f]}: ${pr[f]}`;
     list.appendChild(li);
   });
   if (pr.repo && pr.repo !== '[POR_RELLENAR]') {
@@ -78,7 +78,7 @@ function buildMatrix() {
   const body = document.querySelector('#tech-table tbody');
   content.techMatrix.forEach(row => {
     const tr = document.createElement('tr');
-    ['tech', 'use', 'level'].forEach(k => {
+    ['tech', 'use', 'level', 'highlight'].forEach(k => {
       const td = document.createElement('td');
       td.textContent = row[k];
       tr.appendChild(td);
@@ -99,7 +99,30 @@ function buildContact() {
   });
 }
 
+function buildTitles() {
+  const t = content.titles;
+  document.getElementById('what-title').textContent = t.what;
+  document.getElementById('stack-title').textContent = t.stack;
+  document.getElementById('projects-title').textContent = t.projects;
+  document.getElementById('other-title').textContent = t.other;
+  document.getElementById('tech-title').textContent = t.tech;
+  document.getElementById('contact-title').textContent = t.contact;
+  document.getElementById('th-tech').textContent = t.table.tech;
+  document.getElementById('th-use').textContent = t.table.use;
+  document.getElementById('th-level').textContent = t.table.level;
+  document.getElementById('th-highlight').textContent = t.table.highlight;
+  document.getElementById('contact-message-label').textContent = t.contactMessage;
+  document.getElementById('contact-send').textContent = t.contactSend;
+  document.getElementById('github-link').textContent = t.github;
+  document.getElementById('linkedin-link').textContent = t.linkedin;
+}
+
 function setupAnimations() {
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduce) {
+    document.querySelectorAll('.fade-in').forEach(el => el.classList.add('visible'));
+    return;
+  }
   const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -113,6 +136,7 @@ function setupAnimations() {
 
 document.addEventListener('DOMContentLoaded', () => {
   buildHero();
+  buildTitles();
   buildWhatIDo();
   buildStack();
   buildProjects();

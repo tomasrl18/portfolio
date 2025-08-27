@@ -4,9 +4,10 @@ Backend & Integrations portfolio for Tomás R., Software Developer.
 
 ## Structure
 - `src/index.html`: main page and semantics
-- `src/styles.scss`: minimal styling tokens
+- `src/styles.scss`: tokens and utilities (spacing, radius, accents)
 - `src/data/content.js`: all textual content // i18n keys
 - `src/index.js`: DOM population, contact form and Weglot init
+- `src/robots.txt` & `src/sitemap.xml`: SEO helpers
 
 Assets reside in `src/assets/`.
 
@@ -28,8 +29,8 @@ npm run build
 ```
 
 ## Accessibility & performance
-Run Lighthouse in Chrome DevTools. Aim for ≥90 in Performance, Best Practices and SEO.
+Run Lighthouse in Chrome DevTools (Incognito, Fast 3G). Aim for ≥90 in Performance, Best Practices and SEO.
 
 ## Weglot
 Weglot is loaded from the CDN and initialized in `src/index.js`.
-To verify translations, start the site and switch languages via the Weglot selector.
+To verify translations, start the site, ensure all text comes from `content.js`, and switch languages via the Weglot selector.
