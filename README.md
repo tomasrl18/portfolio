@@ -1,6 +1,6 @@
 # Portfolio
 
-Backend & Integrations portfolio for Tomás R.
+Backend & Integrations portfolio for Tomás R., Software Developer.
 
 ## Structure
 - `src/index.html`: main page and semantics

@@ -99,6 +99,18 @@ function buildContact() {
   });
 }
 
+function setupAnimations() {
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   buildHero();
   buildWhatIDo();
@@ -106,6 +118,7 @@ document.addEventListener('DOMContentLoaded', () => {
   buildProjects();
   buildMatrix();
   buildContact();
+  setupAnimations();
   document.getElementById('footer-year').textContent = new Date().getFullYear();
   Weglot.initialize({ api_key: 'wg_7328ddd745f36fcc7f51a6badbc041083' });
 });

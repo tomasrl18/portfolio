@@ -2,7 +2,7 @@
   "name": "tomasrl-portfolio",
   "version": "1.0.0",
   "private": true,
-  "description": "Backend & Integrations portfolio for Tomás R.",
+  "description": "Backend & Integrations portfolio for Tomás R., Software Developer.",
   "source": "src/index.html",
   "scripts": {
     "start": "parcel",
@@ -10,6 +10,7 @@
   },
   "devDependencies": {
     "@parcel/transformer-sass": "^2.8.2",
+    "@parcel/transformer-jsonld": "^2.8.2",
     "parcel": "^2.8.2",
     "prettier": "^2.8.1"
   },

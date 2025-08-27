@@ -1,8 +1,10 @@
 $font-body: system-ui, sans-serif;
 $font-mono: 'Courier New', Courier, monospace;
 $color-bg: #0d1117;
+$color-bg-alt: #161b22;
 $color-text: #e6e6e6;
 $color-accent: #58a6ff;
+$color-secondary: #ff7b72;
 $spacing-md: 1rem;
 $spacing-lg: 2rem;
 $max-width: 800px;
@@ -18,6 +20,10 @@ body {
 
 h1, h2, h3 {
   font-family: $font-mono;
+}
+
+h2 {
+  color: $color-secondary;
 }
 
 a {
@@ -48,6 +54,12 @@ a {
   border: 1px solid $color-accent;
   color: $color-accent;
   text-decoration: none;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.btn:hover {
+  background: $color-accent;
+  color: $color-bg;
 }
 
 .cards {
@@ -58,6 +70,12 @@ a {
 .card {
   border: 1px solid $color-accent;
   padding: $spacing-md;
+  background: rgba($color-accent, 0.05);
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-2px);
 }
 
 #stack-list, #hero-bullets {
@@ -81,6 +99,21 @@ a {
 footer {
   text-align: center;
   padding: $spacing-lg 0;
+}
+
+section:nth-of-type(even) {
+  background: $color-bg-alt;
+}
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
 
 @media (prefers-reduced-motion: reduce) {

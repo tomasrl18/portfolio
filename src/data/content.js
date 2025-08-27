@@ -1,7 +1,7 @@
 export const content = {
   hero: {
     name: 'Tomás R.', // i18n: hero.name
-    role: 'Backend & Integrations Engineer', // i18n: hero.role
+    role: 'Backend & Integrations Software Developer', // i18n: hero.role
     bullets: [
       'APIs and microservices', // i18n: hero.bullet_apis
       'Odoo/Laravel integrations', // i18n: hero.bullet_integrations
