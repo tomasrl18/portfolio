@@ -134,6 +134,20 @@ function setupAnimations() {
   document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 }
 
+function setupTheme() {
+  const toggle = document.getElementById('theme-toggle');
+  const stored = localStorage.getItem('theme');
+  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  const theme = stored || (prefersDark ? 'dark' : 'light');
+  document.body.dataset.theme = theme;
+  toggle.textContent = content.themeToggle;
+  toggle.addEventListener('click', () => {
+    const next = document.body.dataset.theme === 'dark' ? 'light' : 'dark';
+    document.body.dataset.theme = next;
+    localStorage.setItem('theme', next);
+  });
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   buildHero();
   buildTitles();
@@ -143,6 +157,7 @@ document.addEventListener('DOMContentLoaded', () => {
   buildMatrix();
   buildContact();
   setupAnimations();
+  setupTheme();
   document.getElementById('footer-year').textContent = new Date().getFullYear();
   Weglot.initialize({ api_key: 'wg_7328ddd745f36fcc7f51a6badbc041083' });
 });

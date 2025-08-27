@@ -6,7 +6,7 @@ Backend & Integrations portfolio for Tomás R., Software Developer.
 - `src/index.html`: main page and semantics
 - `src/styles.scss`: tokens and utilities (spacing, radius, accents)
 - `src/data/content.js`: all textual content // i18n keys
-- `src/index.js`: DOM population, contact form and Weglot init
+- `src/index.js`: DOM population, contact form, theme toggle and Weglot init
 - `src/robots.txt` & `src/sitemap.xml`: SEO helpers
 
 Assets reside in `src/assets/`.
@@ -27,6 +27,9 @@ npm run start
 ```bash
 npm run build
 ```
+
+## Theme
+Respects `prefers-color-scheme` and can be toggled via the button in the top-right.
 
 ## Accessibility & performance
 Run Lighthouse in Chrome DevTools (Incognito, Fast 3G). Aim for ≥90 in Performance, Best Practices and SEO.

@@ -1,4 +1,5 @@
 export const content = {
+  themeToggle: 'Toggle theme', // i18n: theme.toggle
   hero: {
     name: 'Tomás R.', // i18n: hero.name
     role: 'Backend & Integrations Software Developer', // i18n: hero.role
