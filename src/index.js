@@ -1,6 +1,163 @@
-import initScrollReveal from "./scripts/scrollReveal";
-import initTiltEffect from "./scripts/tiltAnimation";
-import { targetElements, defaultProps } from "./data/scrollRevealConfig";
+import { content } from './data/content.js';
 
-initScrollReveal(targetElements, defaultProps);
-initTiltEffect();
+function buildHero() {
+  document.getElementById('hero-name').textContent = content.hero.name;
+  document.getElementById('hero-role').textContent = content.hero.role;
+  const bullets = document.getElementById('hero-bullets');
+  content.hero.bullets.forEach(b => {
+    const li = document.createElement('li');
+    li.textContent = b;
+    bullets.appendChild(li);
+  });
+  document.getElementById('cta-projects').textContent = content.hero.ctaProjects;
+  document.getElementById('cta-contact').textContent = content.hero.ctaContact;
+}
+
+function buildWhatIDo() {
+  const wrapper = document.getElementById('what-i-do-cards');
+  content.whatIDo.forEach(card => {
+    const div = document.createElement('div');
+    div.className = 'card';
+    const h3 = document.createElement('h3');
+    h3.textContent = card.title;
+    const p = document.createElement('p');
+    p.textContent = card.text;
+    div.appendChild(h3);
+    div.appendChild(p);
+    wrapper.appendChild(div);
+  });
+}
+
+function buildStack() {
+  const list = document.getElementById('stack-list');
+  content.stack.forEach(item => {
+    const li = document.createElement('li');
+    li.textContent = item;
+    list.appendChild(li);
+  });
+}
+
+function buildProjects() {
+  const cs = document.getElementById('case-studies');
+  content.projects.caseStudies.forEach(pr => {
+    cs.appendChild(buildProject(pr));
+  });
+  const others = document.getElementById('other-projects');
+  content.projects.others.forEach(pr => {
+    others.appendChild(buildProject(pr));
+  });
+}
+
+function buildProject(pr) {
+  const article = document.createElement('article');
+  const h3 = document.createElement('h3');
+  h3.textContent = pr.name;
+  article.appendChild(h3);
+  const list = document.createElement('ul');
+  const fields = ['problem', 'architecture', 'decisions', 'security', 'tests', 'results', 'role', 'stack'];
+  fields.forEach(f => {
+    const li = document.createElement('li');
+    li.textContent = `${content.projectFields[f]}: ${pr[f]}`;
+    list.appendChild(li);
+  });
+  if (pr.repo && pr.repo !== '[POR_RELLENAR]') {
+    const li = document.createElement('li');
+    const a = document.createElement('a');
+    a.href = pr.repo;
+    a.textContent = 'Repo';
+    a.target = '_blank';
+    a.rel = 'noreferrer';
+    li.appendChild(a);
+    list.appendChild(li);
+  }
+  article.appendChild(list);
+  return article;
+}
+
+function buildMatrix() {
+  const body = document.querySelector('#tech-table tbody');
+  content.techMatrix.forEach(row => {
+    const tr = document.createElement('tr');
+    ['tech', 'use', 'level', 'highlight'].forEach(k => {
+      const td = document.createElement('td');
+      td.textContent = row[k];
+      tr.appendChild(td);
+    });
+    body.appendChild(tr);
+  });
+}
+
+function buildContact() {
+  document.getElementById('contact-email').textContent = content.contact.email;
+  document.getElementById('github-link').href = content.contact.github;
+  document.getElementById('linkedin-link').href = content.contact.linkedin;
+  const form = document.getElementById('contact-form');
+  form.action = content.contact.formAction;
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+    fetch(content.contact.formAction, { method: 'POST', body: new FormData(form) });
+  });
+}
+
+function buildTitles() {
+  const t = content.titles;
+  document.getElementById('what-title').textContent = t.what;
+  document.getElementById('stack-title').textContent = t.stack;
+  document.getElementById('projects-title').textContent = t.projects;
+  document.getElementById('other-title').textContent = t.other;
+  document.getElementById('tech-title').textContent = t.tech;
+  document.getElementById('contact-title').textContent = t.contact;
+  document.getElementById('th-tech').textContent = t.table.tech;
+  document.getElementById('th-use').textContent = t.table.use;
+  document.getElementById('th-level').textContent = t.table.level;
+  document.getElementById('th-highlight').textContent = t.table.highlight;
+  document.getElementById('contact-message-label').textContent = t.contactMessage;
+  document.getElementById('contact-send').textContent = t.contactSend;
+  document.getElementById('github-link').textContent = t.github;
+  document.getElementById('linkedin-link').textContent = t.linkedin;
+}
+
+function setupAnimations() {
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduce) {
+    document.querySelectorAll('.fade-in').forEach(el => el.classList.add('visible'));
+    return;
+  }
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+}
+
+function setupTheme() {
+  const toggle = document.getElementById('theme-toggle');
+  const stored = localStorage.getItem('theme');
+  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  const theme = stored || (prefersDark ? 'dark' : 'light');
+  document.body.dataset.theme = theme;
+  toggle.textContent = content.themeToggle;
+  toggle.addEventListener('click', () => {
+    const next = document.body.dataset.theme === 'dark' ? 'light' : 'dark';
+    document.body.dataset.theme = next;
+    localStorage.setItem('theme', next);
+  });
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  buildHero();
+  buildTitles();
+  buildWhatIDo();
+  buildStack();
+  buildProjects();
+  buildMatrix();
+  buildContact();
+  setupAnimations();
+  setupTheme();
+  document.getElementById('footer-year').textContent = new Date().getFullYear();
+  Weglot.initialize({ api_key: 'wg_7328ddd745f36fcc7f51a6badbc041083' });
+});

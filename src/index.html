@@ -1,371 +1,114 @@
 <!DOCTYPE html>
-<html lang="en" class="sr">
-
+<html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="shortcut icon" type="image/png" href="assets/favicon.png" />
-
-  <title>Tomás R. | Software Developer</title>
-  <meta name="keywords" content="tomasrl, Tomas, programming" />
-  <meta name="description" content="Tomás R.L. | Developer" />
-
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="icon" type="image/png" href="assets/favicon.png" />
+  <title>Tomás R. | Backend & Integrations Engineer</title>
+  <meta name="description" content="Backend & Integrations Engineer focused on APIs, Odoo/Laravel, automation and performance." />
+  <meta property="og:title" content="Tomás R. | Backend & Integrations Engineer" />
+  <meta property="og:description" content="APIs, Odoo/Laravel integrations, PDF reporting" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://tomasrl.es" />
+  <link rel="canonical" href="https://tomasrl.es" />
+  <meta name="twitter:card" content="summary" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.scss" />
-  <script defer src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
-  <script defer src="./data/displayText.js"></script>
-
-  <script type="text/javascript" src="https://cdn.weglot.com/weglot.min.js"></script>
-  <script>
-    Weglot.initialize({
-      api_key: 'wg_7328ddd745f36fcc7f51a6badbc041083'
-    });
-  </script>
 </head>
-
 <body>
-  <div id="top"></div>
-
-  <section id="hero" class="jumbotron">
+  <button id="theme-toggle" class="btn theme-toggle"></button>
+  <header id="hero" class="fade-in">
     <div class="container">
-      <h1 class="hero-title load-hidden">
-        Hi, my name is <span class="text-color-main">Tomás R.</span>
-        <br />
-        I'm a Software Developer.
-      </h1>
-      <p class="hero-cta load-hidden">
-        <a rel="noreferrer" class="cta-btn cta-btn--hero" href="#about">Know more</a>
-      </p>
+      <h1 class="hero__title"><span id="hero-name"></span></h1>
+      <h2 class="hero__role" id="hero-role"></h2>
+      <ul class="hero__bullets" id="hero-bullets"></ul>
+      <nav class="hero__cta">
+        <a href="#projects" class="btn" id="cta-projects"></a>
+        <a href="#contact" class="btn" id="cta-contact"></a>
+      </nav>
     </div>
-  </section>
-
-  <section id="about">
-    <div class="container">
-      <h2 class="section-title load-hidden">About me</h2>
-      <div class="row about-wrapper">
-        <div class="col-md-6 col-sm-12">
-          <div class="about-wrapper__image load-hidden">
-            <div data-tilt data-tilt-max="4" data-tilt-glare="true" data-tilt-max-glare="0.5"
-              class="thumbnail rounded js-tilt">
-              <img alt="Profile Image" class="img-fluid rounded shadow-lg" height="auto" width="300px"
-                src="assets/ai.jpg" alt="Profile Image" />
-            </div>
-          </div>
-        </div>
-        <div class="col-md-6 col-sm-12">
-          <div class="about-wrapper__info load-hidden">
-            <p class="about-wrapper__info-text">
-              Hi! I'm Tomás Raigal López, a technology enthusiast who started
-              his journey in the world of programming at the age of 17.
-              Currently, I am working as a web developer. 💻✨
-            </p>
-            <p class="about-wrapper__info-text">
-              I am always willing to learn. Right now I'm really into the
-              world of best practices, clean code and communities.
-            </p>
-
-            <button onclick="toggleSkills()" class="cta-btn cta-btn--hab">
-              Main skills
-            </button>
-
-            <ul class="skills-list">
-              <li>PHP</li>
-              <li>JavaScript</li>
-              <li>HTML</li>
-              <li>CSS</li>
-              <li>Git</li>
-              <li>Testing</li>
-            </ul>
-
-            <button onclick="toggleArcs()" style="margin-top: 5px;" class="cta-btn cta-btn--hab">
-              Architectures
-            </button>
-
-            <ul class="arcs-list">
-              <li>Laravel</li>
-              <li>Vue.js</li>
-            </ul>
-
-            <button onclick="toggleSoftSkills()" style="margin-top: 5px;" class="cta-btn cta-btn--hab">
-              Soft Skills
-            </button>
-
-            <ul class="soft-skills-list">
-              <li>Communication</li>
-              <li>Assertiveness</li>
-              <li>Respect</li>
-              <li>Feedback</li>
-            </ul>
-          </div>
-        </div>
+  </header>
+  <main>
+    <section id="what-i-do" class="fade-in">
+      <div class="container">
+        <h2 id="what-title"></h2>
+        <div class="cards" id="what-i-do-cards"></div>
       </div>
-    </div>
-  </section>
-
-  <section id="education" style="margin-top: 100px;">
-    <div class="container">
-      <h2 class="section-title load-hidden">My education</h2>
-      <div class="row about-wrapper">
-        <div class="col-md-6 col-sm-12">
-          <div class="about-wrapper__info load-hidden">
-            <h1 class="text-left dark-blue-text">
-              Web Application Development | <small>2021 - 2023</small>
-            </h1>
-
-            <p class="about-wrapper__info-text">
-              <b>
-                <i class="fa fa-globe fa-inverse"></i>
-                Place:
-              </b>
-              <a href="https://www.iescierva.net/" target="_blank">I.E.S. Ingeniero de la cierva</a>
-            </p>
-
-            <p class="about-wrapper__info-text">
-              <b>
-                <i class="fa fa-graduation-cap fa-inverse"></i>
-                Average grade:
-              </b> 7.8
-            </p>
-
-            <p class="about-wrapper__info-text">
-              <b>
-                <i class="fa fa-comment-o fa-inverse"></i>
-                Description:
-              </b>
-              Develop, implement, and maintain web applications, using specific technologies,
-              guaranteeing secure access to data.
-            </p>
-
-            <p class="about-wrapper__info-text">
-              <b>
-                <i class="fa fa-code fa-inverse"></i>
-                Skills:
-              </b>
-              Java, PHP, Linux, SQL, MySQL, CSS, XML, xPath, xQuery, HTML, OOP, UML, JavaScript, English
-            </p>
-
-            <p class="about-wrapper__info-text">
-              <b>
-                <i class="fa fa-laptop fa-inverse"></i>
-                Arquitecture:
-              </b>
-              Laravel, Bootstrap
-            </p>
-
-            <hr>
-          </div>
-        </div>
-
-        <div class="col-md-6 col-sm-12">
-          <div class="about-wrapper__image load-hidden">
-            <div data-tilt data-tilt-max="4" data-tilt-glare="true" data-tilt-max-glare="0.5"
-              class="thumbnail rounded js-tilt">
-              <img alt="Education Image" class="img-fluid rounded shadow-lg" height="auto" width="300px"
-                src="assets/educationAI.png" />
-            </div>
-          </div>
-        </div>
+    </section>
+    <section id="stack" class="fade-in">
+      <div class="container">
+        <h2 id="stack-title"></h2>
+        <ul id="stack-list"></ul>
       </div>
-    </div>
-  </section>
-
-  <section id="projects">
-    <div class="container">
-      <div class="project-wrapper">
-        <h2 class="section-title dark-blue-text">Katas</h2>
-
-        <hr />
-
-        <p>
-          In the context of programming, a "kata" refers to a programming
-          exercise designed to improve a developer's skills and practices.
-        </p>
-
-        <hr />
-
-        <div class="row">
-          <div class="col-lg-4 col-sm-12">
-            <div class="project-wrapper__text load-hidden">
-              <h3 class="project-wrapper__text-title">FizzBuzz</h3>
-              <div>
-                <p class="mb-4">
-                  This kata consists of, through TDD, recreating a children's
-                  game.
-
-                  <br />
-
-                  Write a function that takes positive integers and outputs
-                  their string representation. Your function should comply
-                  with the following additional rules:
-                  <br />- If the number is a multiple of three, return the
-                  string "Fizz". <br />- If the number is a multiple of five,
-                  return the string "Buzz". <br />- If the number is a
-                  multiple of both three and five, return the string
-                  "FizzBuzz".
-                </p>
-              </div>
-              <a rel="noreferrer" target="_blank" class="cta-btn cta-btn--hero"
-                href="https://github.com/tomasrl18/FizzBuzzKata">
-                See Live
-              </a>
-            </div>
-          </div>
-          <div class="col-lg-8 col-sm-12">
-            <div class="project-wrapper__image load-hidden">
-              <a rel="noreferrer" href="https://github.com/tomasrl18/FizzBuzzKata" target="_blank">
-                <div data-tilt data-tilt-max="4" data-tilt-glare="true" data-tilt-max-glare="0.5"
-                  class="thumbnail rounded js-tilt">
-                  <img alt="Project Image" class="img-fluid" src="assets/FizzBuzz.png" />
-                </div>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="col-lg-4 col-sm-12">
-            <div class="project-wrapper__text load-hidden">
-              <h3 class="project-wrapper__text-title">Rock Paper Scissors</h3>
-              <div>
-                <p class="mb-4">
-                  This kata replicates the rock paper scissors game in order
-                  to practice skills such as TDD, pair programming or mob
-                  programming.
-                </p>
-              </div>
-              <a rel="noreferrer" target="_blank" class="cta-btn cta-btn--hero"
-                href="https://github.com/tomasrl18/Kata-Rock-Paper-Scissors">
-                See Live
-              </a>
-            </div>
-          </div>
-          <div class="col-lg-8 col-sm-12">
-            <div class="project-wrapper__image load-hidden">
-              <a rel="noreferrer" href="https://github.com/tomasrl18/Kata-Rock-Paper-Scissors" target="_blank">
-                <div data-tilt data-tilt-max="4" data-tilt-glare="true" data-tilt-max-glare="0.5"
-                  class="thumbnail rounded js-tilt">
-                  <img alt="Project Image" class="img-fluid" src="assets/vg6mmkv6hipscpi7pl0h.webp" />
-                </div>
-              </a>
-            </div>
-          </div>
-        </div>
+    </section>
+    <section id="projects" class="fade-in">
+      <div class="container">
+        <h2 id="projects-title"></h2>
+        <div id="case-studies"></div>
+        <h3 id="other-title"></h3>
+        <div id="other-projects"></div>
       </div>
-    </div>
-  </section>
-
-  <section id="projects">
-    <div class="container">
-      <div class="project-wrapper">
-        <h2 class="section-title dark-blue-text">Projects</h2>
-
-        <hr />
-
-        <p>
-          Here you can see some of the projects I have worked on.
-        </p>
-
-        <hr />
-
-        <div class="row">
-          <div class="col-lg-4 col-sm-12">
-            <div class="project-wrapper__text load-hidden">
-              <h3 class="project-wrapper__text-title">Password Generator</h3>
-
-              <div>
-                <p class="mb-4">
-                  This project is a password generator that allows you to
-                  generate a password with the desired length and complexity.
-                </p>
-              </div>
-              <a rel="noreferrer" target="_blank" class="cta-btn cta-btn--hero"
-                href="https://passs-gen.vercel.app/">
-                See Live
-              </a>
-            </div>
-          </div>
-          <div class="col-lg-8 col-sm-12">
-            <div class="project-wrapper__image load-hidden">
-              <a rel="noreferrer" href="https://github.com/tomasrl18/angular-pass-gen" target="_blank">
-                <div data-tilt data-tilt-max="4" data-tilt-glare="true" data-tilt-max-glare="0.5"
-                  class="thumbnail rounded js-tilt">
-                  <img alt="Project Image" class="img-fluid" src="assets/pass-gen.png" />
-                </div>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="col-lg-4 col-sm-12">
-            <div class="project-wrapper__text load-hidden">
-              <h3 class="project-wrapper__text-title">To-Do List</h3>
-
-              <div>
-                <p class="mb-4">
-                  This project is a to-do list that allows you to add, delete, edit
-                  and mark tasks as completed.
-                </p>
-              </div>
-              <a rel="noreferrer" target="_blank" class="cta-btn cta-btn--hero"
-                href="https://github.com/tomasrl18/django-to-do-list">
-                See Live
-              </a>
-            </div>
-          </div>
-          <div class="col-lg-8 col-sm-12">
-            <div class="project-wrapper__image load-hidden">
-              <a rel="noreferrer" href="https://github.com/tomasrl18/django-to-do-list" target="_blank">
-                <div data-tilt data-tilt-max="4" data-tilt-glare="true" data-tilt-max-glare="0.5"
-                  class="thumbnail rounded js-tilt">
-                  <img alt="Project Image" class="img-fluid" src="assets/to-do-list.png" />
-                </div>
-              </a>
-            </div>
-          </div>
-        </div>
+    </section>
+    <section id="tech-matrix" class="fade-in">
+      <div class="container">
+        <h2 id="tech-title"></h2>
+        <table id="tech-table">
+          <thead>
+            <tr><th id="th-tech"></th><th id="th-use"></th><th id="th-level"></th><th id="th-highlight"></th></tr>
+          </thead>
+          <tbody></tbody>
+        </table>
       </div>
-    </div>
-  </section>
-
-  <section id="contact">
-    <div class="container">
-      <h2 class="section-title">Contact</h2>
-      <div class="contact-wrapper load-hidden">
-        <p class="contact-wrapper__text">tomaslopezraigal@gmail.com</p>
-        <a rel="noreferrer" target="_blank" class="cta-btn cta-btn--resume"
-          href="mailto:tomaslopezraigal@gmail.com">Mail me
-        </a>
+    </section>
+    <section id="contact" class="fade-in">
+      <div class="container">
+        <h2 id="contact-title"></h2>
+        <p id="contact-email"></p>
+        <form id="contact-form" method="post" class="stack">
+          <label for="msg" id="contact-message-label"></label>
+          <textarea id="msg" name="msg" rows="4"></textarea>
+          <button type="submit" id="contact-send"></button>
+        </form>
+        <ul class="social cluster">
+          <li><a id="github-link" target="_blank" rel="noreferrer"></a></li>
+          <li><a id="linkedin-link" target="_blank" rel="noreferrer"></a></li>
+        </ul>
       </div>
-    </div>
-  </section>
-
-  <footer class="footer navbar-static-bottom">
-    <div class="container">
-      <a rel="noreferrer" href="#top" class="back-to-top">
-        <i class="fa fa-angle-up fa-2x" aria-hidden="true"></i>
-      </a>
-      <div class="social-links">
-        <a rel="noreferrer" href="https://twitter.com/raigal_tomas" target="_blank">
-          <i class="fa fa-twitter fa-inverse"></i>
-        </a>
-        <a rel="noreferrer" href="https://www.linkedin.com/in/tomas-rl/" target="_blank">
-          <i class="fa fa-linkedin fa-inverse"></i>
-        </a>
-        <a rel="noreferrer" href="https://github.com/tomasrl18" target="_blank">
-          <i class="fa fa-github fa-inverse"></i>
-        </a>
-        <a rel="noreferrer" href="assets/CV - Tomas.pdf" target="_blank">
-          <i class="fa fa-book fa-inverse"></i>
-        </a>
-      </div>
-
-      <hr />
-    </div>
+    </section>
+  </main>
+  <footer class="fade-in">
+    <p>&copy; <span id="footer-year"></span> Tomás R.</p>
   </footer>
 
-  <script defer type="module" src="index.js"></script>
+  <script src="https://cdn.weglot.com/weglot.min.js"></script>
+  <script type="application/ld+json" data-raw>
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Tomás R.",
+    "jobTitle": "Backend & Integrations Software Developer",
+    "url": "https://tomasrl.es",
+    "sameAs": [
+      "https://github.com/tomasrl18",
+      "https://www.linkedin.com/in/tomas-rl/"
+    ]
+  }
+  </script>
+  <script type="application/ld+json" data-raw>
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Tomás R. Portfolio",
+    "url": "https://tomasrl.es",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://tomasrl.es/?s={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  }
+  </script>
+  <script type="module" src="index.js"></script>
 </body>
-
 </html>

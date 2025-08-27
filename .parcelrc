@@ -1,0 +1,9 @@
+{
+  "extends": "@parcel/config-default",
+  "transformers": {
+    "*.jsonld": ["@parcel/transformer-raw"]
+  },
+  "packagers": {
+    "*.jsonld": "@parcel/packager-raw"
+  }
+}
