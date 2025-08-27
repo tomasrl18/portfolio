@@ -1,21 +1,91 @@
-@import "./sass/vendors/bootstrap.scss";
+$font-body: system-ui, sans-serif;
+$font-mono: 'Courier New', Courier, monospace;
+$color-bg: #0d1117;
+$color-text: #e6e6e6;
+$color-accent: #58a6ff;
+$spacing-md: 1rem;
+$spacing-lg: 2rem;
+$max-width: 800px;
 
-@import "./sass/abstracts/mixins";
-@import "./sass/abstracts/variables";
-@import "./sass/abstracts/helpers";
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: $font-body;
+  background: $color-bg;
+  color: $color-text;
+  line-height: 1.6;
+}
 
-@import "./sass/base/base";
-@import "./sass/base/typography";
+h1, h2, h3 {
+  font-family: $font-mono;
+}
 
-@import "./sass/components/buttons";
+a {
+  color: $color-accent;
+}
 
-@import "./sass/layout/footer";
-@import "./sass/layout/sections";
+.container {
+  max-width: $max-width;
+  margin: 0 auto;
+  padding: $spacing-lg $spacing-md;
+}
 
-@import "./sass/sections/about";
-@import "./sass/sections/education";
-@import "./sass/sections/contact";
-@import "./sass/sections/hero";
-@import "./sass/sections/projects";
-@import "./sass/sections/lists";
-@import "./sass/sections/img";
+#hero {
+  text-align: center;
+  padding-top: $spacing-lg;
+}
+
+.hero__bullets {
+  list-style: disc;
+  margin: $spacing-md 0;
+  padding-left: $spacing-lg;
+}
+
+.btn {
+  display: inline-block;
+  margin: 0 $spacing-md;
+  padding: $spacing-md $spacing-lg;
+  border: 1px solid $color-accent;
+  color: $color-accent;
+  text-decoration: none;
+}
+
+.cards {
+  display: grid;
+  gap: $spacing-md;
+}
+
+.card {
+  border: 1px solid $color-accent;
+  padding: $spacing-md;
+}
+
+#stack-list, #hero-bullets {
+  list-style: disc;
+}
+
+#projects article {
+  margin-bottom: $spacing-lg;
+}
+
+#tech-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+#tech-table th, #tech-table td {
+  border: 1px solid $color-accent;
+  padding: $spacing-md;
+}
+
+footer {
+  text-align: center;
+  padding: $spacing-lg 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+}
